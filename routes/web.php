@@ -34,7 +34,6 @@ Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('p
 
 Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name('product.create')->middleware('auth');
 
-
 Route::post('/products/store/', 'App\Http\Controllers\ProductController@store')->name('product.store')->middleware('auth');
 
 Route::get('/products/edit/{product}', 'App\Http\Controllers\ProductController@edit')->name('product.edit')->middleware('auth');

@@ -12,13 +12,12 @@
   </div>
 </div>
 
-<div style="text-align:right;">
-  <form action="{{ route('product.store') }}" method="POST">
+<div style="text-align:left;">
+  <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-
     <div class="row">
       <div class="col-12 mb-2 mt-2">
-        <div class="form-group">
+        <div class="d-flex">
           <input type="text" name="product_name" class="form-control" placeholder="商品名">
         </div>
         @error('product_name')
@@ -26,7 +25,7 @@
         @enderror
       </div>
       <div class="col-12 mb-2 mt-2">
-        <div class="form-group">
+        <div class="d-flex">
           <select name="company_id" class="form-select">
             <option>メーカー名を選択してください</option>
             @foreach ($companies as $company)
@@ -39,7 +38,7 @@
         @enderror
       </div>
       <div class="col-12 mb-2 mt-2">
-        <div class="form-group">
+        <div class="d-flex">
           <input type="text" name="price" class="form-control" placeholder="価格">
         </div>
         @error('price')
@@ -47,7 +46,7 @@
         @enderror
       </div>
       <div class="col-12 mb-2 mt-2">
-        <div class="form-group">
+        <div class="d-flex">
           <input type="text" name="stock" class="form-control" placeholder="在庫数">
         </div>
         @error('stock')
@@ -55,7 +54,7 @@
         @enderror
       </div>
       <div class="col-12 mb-2 mt-2">
-        <div class="form-group">
+        <div class="d-flex">
           <textarea class="form-control" style="height:100px" name="comment" placeholder="コメント"></textarea>
         </div>
         @error('comment')
@@ -63,10 +62,12 @@
         @enderror
       </div>
       <div class="col-12 mb-2 mt-2 ">
-        <input id="image" type="file" name="image">
+        <div class="d-flex">
+          <input type="file" id="img_path" name="img_path">
+        </div>
       </div>
       <div class="col-12 mb-2 mt-2">
-        <button type="submit" class="btn btn-primary w-100">登録</button>
+        <button type="submit" class="btn btn-primary w-40">登録</button>
       </div>
     </div>
   </form>

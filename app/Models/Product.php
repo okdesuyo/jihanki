@@ -14,6 +14,7 @@ class Product extends Model
     'price',
     'stock',
     'comment',
+    'img_path',
     'created_at',
     'updated_at',
   ];
