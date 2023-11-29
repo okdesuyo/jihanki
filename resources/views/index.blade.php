@@ -1,15 +1,32 @@
 @extends('app')
 
 @section('content')
-<div class="py-1">
-  <div class="col-lg-12">
-    <div class="text-left">
+<div class="row">
+  <div class="col-lg-12 margin-tb">
+    <div class="pull-left">
       <h2 style="font-size:1rem;">商品情報一覧画面</h2>
     </div>
-    <div>
+  </div>
+</div>
+
+<div>
+  <div class="container d-flex">
+    <div class="flex-grow-1">
       @auth
       <a class="btn btn-success" href="{{ route('product.create') }}">新規登録</a>
       @endauth
+    </div>
+
+    <div class="flex-shrink-0">
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        @auth
+        <a class="btn btn-secondary" href="route('logout')" onclick="event.preventDefault();
+                      this.closest('form').submit();">
+          {{ __('ログアウト') }}
+        </a>
+        @endauth
+      </form>
     </div>
   </div>
 </div>
@@ -19,7 +36,6 @@
   {{ session('success') }}
 </div>
 @endif
-
 
 <div class="py-2">
   <form action="{{ route('products.index') }}" method="GET" class="d-flex">
@@ -41,7 +57,7 @@
     </div>
 
     <div class="mx-2">
-      <button type="submit" class="btn btn-primary">検索</button>
+      <button type="submit" class="btn btn-info">検索</button>
     </div>
   </form>
 </div>
