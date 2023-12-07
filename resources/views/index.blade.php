@@ -78,13 +78,15 @@
     <tr style=" text-align:center">
       <td>{{$product->id}}</td>
       <td><img src="{{ asset('storage/image/' . $product->img_path) }}" width="40" height="40" alt="image"></td>
-      <td><a href="{{route('product.show',$product->id)}}?page_id={{ $page_id }}">{{$product->product_name}}</a></td>
+      {{-- <td><a href="{{route('product.show',$product->id)}}?page_id={{ $page_id }}">{{$product->product_name}}</a>
+      </td> --}}
+      <td>{{$product->product_name}}</td>
       <td>{{$product->price}}円</td>
       <td>{{$product->stock}}個</td>
       <td>{{$product->company_id}}</td>
       <td>
         @auth
-        <a class="btn btn-sm btn-primary" href="{{ route('product.edit',$product->id) }}">変更</a>
+        <a class="btn btn-sm btn-primary" href="{{ route('product.show',$product->id) }}?page_id={{ $page_id }}">詳細</a>
         @endauth
       </td>
       <td>

@@ -6,8 +6,10 @@
     <div class="pull-left">
       <h2 style="font-size:1rem;">商品情報詳細画面</h2>
     </div>
-    <div class="pull-right">
-      <a class="btn btn-success" href="{{ url('/products') }}?page={{ $page_id }}">戻る</a>
+    <div class="d-flex">
+      <div>
+        <a class="btn btn-success" href="{{ route('products.index') }}">戻る</a>
+      </div>
     </div>
   </div>
 </div>
@@ -57,6 +59,10 @@
       {{ $product->comment }}
     </div>
   </div>
+  <div class="col-12 mb-2 mt-4">
+    <a class="btn btn-success" href="{{route('product.edit',$product->id)}}">編集</a>
+  </div>
 </div>
+
 
 @endsection

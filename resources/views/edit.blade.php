@@ -7,7 +7,7 @@
       <h2 style="font-size:1rem;">商品情報編集画面</h2>
     </div>
     <div class="pull-right">
-      <a class="btn btn-success" href="{{ url('/products') }}">戻る</a>
+      <a class="btn btn-success" href="{{route('product.show',$product->id)}}">戻る</a>
     </div>
   </div>
 </div>
